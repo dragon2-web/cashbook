@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- App Background -->
+    <color name="background_main">#121212</color>
+
+    <!-- Section Backgrounds -->
+    <color name="section_financial">#1E1E1E</color>
+    <color name="section_today">#1E1E1E</color>
+    <color name="section_actions">#181818</color>
+
+    <!-- Buttons -->
+    <color name="button_primary">#2C2C2C</color>
+    <color name="button_text">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+
+    <!-- Divider -->
+    <color name="divider_dark">#333333</color>
+
+    <!-- Finance Colors -->
+    <color name="balance_green">#4CAF50</color>
+    <color name="receivable_orange">#FFA726</color>
+    <color name="payable_red">#EF5350</color>
+    <color name="expense_red">#EF5350</color>
+    <color name="wages_purple">#BA68C8</color>
+
+    <color name="button_ripple_gray">#40808080</color>
+
+    <color name="billing_color">#1976D2</color>
+    <color name="ledger_color">#2E7D32</color>
+    <color name="reports_color">#6A1B9A</color>
+    <color name="add_color">#F57C00</color>
+
+</resources>

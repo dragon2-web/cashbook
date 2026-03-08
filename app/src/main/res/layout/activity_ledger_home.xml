@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main">
+
+    <!-- PAGE TITLE -->
+
+    <TextView
+        android:id="@+id/titleLedger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ledgers"
+        android:textColor="@color/text_primary"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <!-- GRID LAYOUT -->
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/ledgerGrid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:columnCount="2"
+        app:rowCount="3"
+        app:useDefaultMargins="true"
+        app:layout_constraintTop_toBottomOf="@id/titleLedger"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <!-- CUSTOMERS -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tileCustomers"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:backgroundTint="@color/section_financial"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_columnWeight="1"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customers"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- SUPPLIERS -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tileSuppliers"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:backgroundTint="@color/section_financial"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_columnWeight="1"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Suppliers"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- CASH -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tileCash"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:backgroundTint="@color/section_financial"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_columnWeight="1"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cash"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- BANK -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tileBank"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:backgroundTint="@color/section_financial"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_columnWeight="1"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bank"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- EXPENSES -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tileExpenses"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:backgroundTint="@color/section_financial"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_columnWeight="1"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expenses"
+                    android:textColor="@color/expense_red"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
