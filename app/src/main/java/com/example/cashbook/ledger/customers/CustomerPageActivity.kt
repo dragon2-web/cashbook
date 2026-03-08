@@ -1,6 +1,7 @@
 package com.example.cashbook.ledger.customers
 
 import CustomerModel
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -22,21 +23,23 @@ class CustomerPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         enableEdgeToEdge()
-
+//load customers
         setContentView(R.layout.activity_customer_page)
 
         recyclerView = findViewById(R.id.customerRecyclerView)
-        addCustomerBtn = findViewById(R.id.addCustomerBtn)
-
         recyclerView.layoutManager = LinearLayoutManager(this)
-
         loadCustomers()
+//add customers
+        addCustomerBtn = findViewById(R.id.addCustomerBtn)
 
         addCustomerBtn.setOnClickListener {
 
-            Toast.makeText(this, "Add Customer Clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AddCustomerActivity::class.java)
+            startActivity(intent)
 
         }
+
+
     }
 
     private fun loadCustomers() {
