@@ -21,27 +21,28 @@ class MainActivity : AppCompatActivity() {
             this,
             com.example.cashbook.dashboard.Dashboard::class.java
         ))
-    }
-
-    private fun checkAuthAndRedirect() {
-        val currentUser = auth.currentUser
-
-        if (currentUser != null) {
-
-            val intent = Intent(
-                this,
-                com.example.cashbook.dashboard.Dashboard::class.java
-            )
-            startActivity(intent)
-        } else {
-            val intent = Intent(
-                this,
-                com.example.cashbook.logIn.LogIn::class.java
-            )
-            startActivity(intent)
-        }
-
-        // Kill MainActivity so user can't come back here
         finish()
     }
+//
+//    private fun checkAuthAndRedirect() {
+//        val currentUser = auth.currentUser
+//
+//        if (currentUser != null) {
+//
+//            val intent = Intent(
+//                this,
+//                com.example.cashbook.dashboard.Dashboard::class.java
+//            )
+//            startActivity(intent)
+//        } else {
+//            val intent = Intent(
+//                this,
+//                com.example.cashbook.logIn.LogIn::class.java
+//            )
+//            startActivity(intent)
+//        }
+//
+//        // Kill MainActivity so user can't come back here
+//        finish()
+//    }
 }

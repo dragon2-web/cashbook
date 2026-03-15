@@ -1,7 +1,5 @@
 package com.example.cashbook.ledger.customers
 
-import CustomerModel
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -9,80 +7,69 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cashbook.R
+import com.example.cashbook.ledger.person.AddPersonActivity
+import com.example.cashbook.ledger.person.PersonAdapter
+import com.example.cashbook.ledger.person.PersonModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ListenerRegistration
 
 class CustomerPageActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: CustomerAdapter
+    private lateinit var adapter: PersonAdapter
     private lateinit var addCustomerBtn: FloatingActionButton
 
+    private val db by lazy { FirebaseFirestore.getInstance() }
+    private var listenerRegistration: ListenerRegistration? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-
         enableEdgeToEdge()
-//load customers
         setContentView(R.layout.activity_customer_page)
 
         recyclerView = findViewById(R.id.customerRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        loadCustomers()
-//add customers
+
         addCustomerBtn = findViewById(R.id.addCustomerBtn)
-
         addCustomerBtn.setOnClickListener {
-
-            val intent = Intent(this, AddCustomerActivity::class.java)
-            startActivity(intent)
-
+            startActivity(AddPersonActivity.newIntent(this, "customers"))
         }
 
-
+        listenToCustomers()
     }
 
-    private fun loadCustomers() {
+    private fun listenToCustomers() {
+        listenerRegistration = db.collection("customers")
+            .orderBy("createdAt")
+            .addSnapshotListener { snapshot, error ->
 
-        val db = FirebaseFirestore.getInstance()
-
-        db.collection("customers")
-            .get()
-            .addOnSuccessListener { result ->
-
-                val customers = mutableListOf<CustomerModel>()
-
-                for (document in result) {
-
-                    val uid = document.id
-                    val name = document.getString("name") ?: ""
-                    val address = document.getString("address") ?: ""
-
-                    val customer = CustomerModel(uid, name, address)
-
-                    customers.add(customer)
+                if (error != null) {
+                    Toast.makeText(this, "Failed to load customers", Toast.LENGTH_SHORT).show()
+                    return@addSnapshotListener
                 }
 
-                adapter = CustomerAdapter(customers) { customer ->
+                val customers = snapshot?.documents?.map { document ->
+                    PersonModel(
+                        uid     = document.id,
+                        name    = document.getString("name")    ?: "",
+                        address = document.getString("address") ?: ""
+                    )
+                }?.toMutableList() ?: mutableListOf()
 
-                    Toast.makeText(
-                        this,
-                        "Clicked: ${customer.name}",
-                        Toast.LENGTH_SHORT
-                    ).show()
-
-                    // customer.uid can be used for next page
+                if (!::adapter.isInitialized) {
+                    adapter = PersonAdapter(customers) { customer ->
+                        startActivity(CustomerLedgerActivity.newIntent(this, customer.uid))
+                    }
+                    recyclerView.adapter = adapter
+                } else {
+                    adapter.updateList(customers)
                 }
-
-                recyclerView.adapter = adapter
             }
-            .addOnFailureListener {
+    }
 
-                Toast.makeText(
-                    this,
-                    "Failed to load customers",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
+    override fun onDestroy() {
+        super.onDestroy()
+        listenerRegistration?.remove()   // stop listening when activity is destroyed
     }
 }

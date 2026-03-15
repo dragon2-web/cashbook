@@ -8,14 +8,114 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cashbook"
         tools:targetApi="31">
         <activity
-            android:name=".ledger.customers.CustomerPageActivity"
+            android:name=".bills_and_transactions.TodayTransactionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bills_and_transactions.TodayPurchaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bills_and_transactions.TodaySalesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sales_bill.SalesBillPreviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".reports.TransactionReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".reports.PurchaseReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".reports.SalesReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".reports.ReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".assests_and_liabilities.CreditCardsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".assests_and_liabilities.LoansActivity"
+            android:exported="false" />
+        <activity
+            android:name=".assests_and_liabilities.CardPaymentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".assests_and_liabilities.CapitalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".assests_and_liabilities.AddCreditCardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".assests_and_liabilities.AddLoanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".assests_and_liabilities.AddAssetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".assests_and_liabilities.AssetsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".assests_and_liabilities.AssetsLiabilitiesActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
             android:exported="false"
-            android:theme="@style/Theme.Cashbook" />
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".ledger.TransactionDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ledger.expense.ExpenseLedgerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ledger.bank.BankLedgerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ledger.cash.CashLedgerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".transactions.AddTransactionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".purchase.PurchaseBillActivity"
+            android:exported="false" />
+        <activity
+            android:name=".sales_bill.SalesBillActivity"
+            android:exported="false" />
+        <activity
+            android:name=".products.AddProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".products.ProductPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ledger.suppliers.SupplierLedgerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ledger.suppliers.SupplierPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ledger.customers.CustomerLedgerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ledger.customers.CustomerPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ledger.person.AddPersonActivity"
+            android:exported="false" />
         <activity
             android:name=".ledger.LedgerHomeActivity"
             android:exported="false" />

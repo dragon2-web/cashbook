@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,14 +12,12 @@
         android:scrollbars="none"
         android:padding="16dp">
 
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <!-- HEADER SECTION -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,15 +26,11 @@
                 android:paddingTop="8dp"
                 android:paddingBottom="16dp">
 
-                <!-- TITLE ROW -->
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
-
-                    <!-- COMPANY NAME -->
 
                     <TextView
                         android:layout_width="0dp"
@@ -48,23 +41,18 @@
                         android:textSize="24sp"
                         android:textStyle="bold"/>
 
-                    <!-- PROFILE BUTTON -->
-
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnProfile"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:padding="8dp"
                         android:backgroundTint="@android:color/transparent"
-
                         app:icon="@drawable/baseline_account_circle_24"
                         app:iconSize="32dp"
                         app:iconTint="@color/text_primary"
-
                         app:rippleColor="@color/button_ripple_gray"/>
-                </LinearLayout>
 
-                <!-- DATE -->
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/txtDate"
@@ -74,8 +62,8 @@
                     android:textSize="14sp"/>
 
             </LinearLayout>
-            <!-- FINANCIAL SUMMARY -->
 
+            <!-- FINANCIAL SUMMARY -->
             <TextView
                 android:text="@string/financial_summary"
                 android:textColor="@color/text_primary"
@@ -124,7 +112,6 @@
                         android:layout_marginBottom="10dp"/>
 
                     <!-- CASH -->
-
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -143,11 +130,9 @@
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
-
                     </LinearLayout>
 
                     <!-- BANK -->
-
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_marginTop="8dp"
@@ -167,11 +152,9 @@
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
-
                     </LinearLayout>
 
                     <!-- RECEIVABLE -->
-
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_marginTop="8dp"
@@ -191,11 +174,9 @@
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
-
                     </LinearLayout>
 
                     <!-- PAYABLE -->
-
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_marginTop="8dp"
@@ -215,23 +196,21 @@
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
-
                     </LinearLayout>
 
-                </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_dark"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"/>
 
+
+
+                </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <!-- TODAY SECTION -->
-
-            <TextView
-                android:text="@string/today"
-                android:textColor="@color/text_primary"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_marginBottom="6dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -242,60 +221,161 @@
                 app:cardBackgroundColor="@color/section_today">
 
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                    <LinearLayout
-                        android:orientation="horizontal"
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="4dp"
+                        app:cardBackgroundColor="@color/section_today">
 
-                        <TextView
-                            android:text="@string/today_expense"
-                            android:textColor="@color/text_secondary"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/txtExpenses"
-                            android:textColor="@color/expense_red"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Today"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold"
+                                android:textSize="13sp"
+                                android:layout_marginBottom="12dp"/>
 
-                    </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center">
 
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_marginTop="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                                <!-- Sales -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
 
-                        <TextView
-                            android:text="@string/today_wages"
-                            android:textColor="@color/text_secondary"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                                    <FrameLayout
+                                        android:id="@+id/btnTodaySales"
+                                        android:layout_width="56dp"
+                                        android:layout_height="56dp"
+                                        android:background="@drawable/circle_bg_green"
+                                        android:clickable="true"
+                                        android:focusable="true">
 
-                        <TextView
-                            android:id="@+id/txtWages"
-                            android:textColor="@color/wages_purple"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                                        <TextView
+                                            android:id="@+id/txtTodaySales"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="0"
+                                            android:textColor="#FFFFFF"
+                                            android:textSize="20sp"
+                                            android:textStyle="bold"/>
+                                    </FrameLayout>
 
-                    </LinearLayout>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Sales"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="12sp"
+                                        android:layout_marginTop="6dp"/>
+
+                                </LinearLayout>
+
+                                <!-- Purchase -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
+
+                                    <FrameLayout
+                                        android:id="@+id/btnTodayPurchase"
+                                        android:layout_width="56dp"
+                                        android:layout_height="56dp"
+                                        android:background="@drawable/circle_bg_red"
+                                        android:clickable="true"
+                                        android:focusable="true">
+
+                                        <TextView
+                                            android:id="@+id/txtTodayPurchase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="0"
+                                            android:textColor="#FFFFFF"
+                                            android:textSize="20sp"
+                                            android:textStyle="bold"/>
+                                    </FrameLayout>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Purchase"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="12sp"
+                                        android:layout_marginTop="6dp"/>
+
+                                </LinearLayout>
+
+                                <!-- Transactions -->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
+
+                                    <FrameLayout
+                                        android:id="@+id/btnTodayTxn"
+                                        android:layout_width="56dp"
+                                        android:layout_height="56dp"
+                                        android:background="@drawable/circle_bg_primary"
+                                        android:clickable="true"
+                                        android:focusable="true">
+
+                                        <TextView
+                                            android:id="@+id/txtTodayTxn"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="0"
+                                            android:textColor="#FFFFFF"
+                                            android:textSize="20sp"
+                                            android:textStyle="bold"/>
+                                    </FrameLayout>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Transactions"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="12sp"
+                                        android:layout_marginTop="6dp"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
 
                 </LinearLayout>
-
             </com.google.android.material.card.MaterialCardView>
 
             <!-- QUICK ACTIONS -->
-
             <TextView
                 android:text="@string/actions"
                 android:textColor="@color/text_primary"
@@ -305,90 +385,167 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <GridLayout
-                android:columnCount="2"
-                android:background="@color/background_main"
-                android:padding="8dp"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <!-- BILLING -->
+                <!-- Row 1: Ledger + Reports -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="6dp"
-                    android:text="@string/billing"
-                    android:textColor="@color/button_text"
-                    android:backgroundTint="@color/button_primary"
-                    app:cornerRadius="12dp"
-                    app:icon="@android:drawable/ic_menu_edit"
-                    app:iconGravity="textTop"
-                    app:iconSize="30dp"
-                    app:iconPadding="10dp"
-                    app:rippleColor="@color/button_ripple_gray"
-                    app:iconTint="@color/billing_color"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLedgers"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:text="Ledger"
+                        android:textColor="@color/button_text"
+                        android:backgroundTint="@color/button_primary"
+                        app:cornerRadius="12dp"
+                        app:icon="@android:drawable/ic_menu_sort_by_size"
+                        app:iconGravity="textTop"
+                        app:iconSize="30dp"
+                        app:iconPadding="10dp"
+                        app:rippleColor="@color/button_ripple_gray"
+                        app:iconTint="@color/ledger_color"/>
 
-                <!-- LEDGERS -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnReports"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:text="Reports"
+                        android:textColor="@color/button_text"
+                        android:backgroundTint="@color/button_primary"
+                        app:cornerRadius="12dp"
+                        app:icon="@android:drawable/ic_menu_manage"
+                        app:iconGravity="textTop"
+                        app:iconSize="30dp"
+                        app:iconPadding="10dp"
+                        app:rippleColor="@color/button_ripple_gray"
+                        app:iconTint="@color/reports_color"/>
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnLedgers"
-                    android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="6dp"
-                    android:text="@string/ledgers"
-                    android:textColor="@color/button_text"
-                    android:backgroundTint="@color/button_primary"
-                    app:cornerRadius="12dp"
-                    app:icon="@android:drawable/ic_menu_sort_by_size"
-                    app:iconGravity="textTop"
-                    app:iconSize="30dp"
-                    app:iconPadding="10dp"
-                    app:rippleColor="@color/button_ripple_gray"
-                    app:iconTint="@color/ledger_color"/>
+                </LinearLayout>
 
-                <!-- REPORTS -->
+                <!-- Row 2: Sales Bill + Purchase Bill -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="6dp"
-                    android:text="@string/reports"
-                    android:textColor="@color/button_text"
-                    android:backgroundTint="@color/button_primary"
-                    app:cornerRadius="12dp"
-                    app:icon="@android:drawable/ic_menu_manage"
-                    app:iconGravity="textTop"
-                    app:iconSize="30dp"
-                    app:iconPadding="10dp"
-                    app:rippleColor="@color/button_ripple_gray"
-                    app:iconTint="@color/reports_color"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAddSalesBill"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:text="Sales Bill"
+                        android:textColor="@color/button_text"
+                        android:backgroundTint="@color/button_primary"
+                        app:cornerRadius="12dp"
+                        app:icon="@android:drawable/ic_menu_edit"
+                        app:iconGravity="textTop"
+                        app:iconSize="30dp"
+                        app:iconPadding="10dp"
+                        app:rippleColor="@color/button_ripple_gray"
+                        app:iconTint="@color/billing_color"/>
 
-                <!-- ADD ENTRY -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAddPurchaseBill"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:text="Purchase Bill"
+                        android:textColor="@color/button_text"
+                        android:backgroundTint="@color/button_primary"
+                        app:cornerRadius="12dp"
+                        app:icon="@android:drawable/ic_menu_agenda"
+                        app:iconGravity="textTop"
+                        app:iconSize="30dp"
+                        app:iconPadding="10dp"
+                        app:rippleColor="@color/button_ripple_gray"
+                        app:iconTint="@color/reports_color"/>
 
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="0dp"
-                    android:layout_height="120dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="6dp"
-                    android:text="@string/add_entry"
-                    android:textColor="@color/button_text"
-                    android:backgroundTint="@color/button_primary"
-                    app:cornerRadius="12dp"
-                    app:icon="@android:drawable/ic_input_add"
-                    app:iconGravity="textTop"
-                    app:iconSize="30dp"
-                    app:iconPadding="10dp"
-                    app:rippleColor="@color/button_ripple_gray"
-                    app:iconTint="@color/add_color"/>
+                </LinearLayout>
 
-            </GridLayout>
+                <!-- Row 3: Products + Add Transaction -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnProducts"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:text="Products"
+                        android:textColor="@color/button_text"
+                        android:backgroundTint="@color/button_primary"
+                        app:cornerRadius="12dp"
+                        app:icon="@android:drawable/ic_menu_gallery"
+                        app:iconGravity="textTop"
+                        app:iconSize="30dp"
+                        app:iconPadding="10dp"
+                        app:rippleColor="@color/button_ripple_gray"
+                        app:iconTint="@color/add_color"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAddTransaction"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:text="Add Transaction"
+                        android:textColor="@color/button_text"
+                        android:backgroundTint="@color/button_primary"
+                        app:cornerRadius="12dp"
+                        app:icon="@android:drawable/ic_input_add"
+                        app:iconGravity="textTop"
+                        app:iconSize="30dp"
+                        app:iconPadding="10dp"
+                        app:rippleColor="@color/button_ripple_gray"
+                        app:iconTint="@color/add_color"/>
+
+                </LinearLayout>
+
+                <!-- Row 4: Assets & Liabilities (full width) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAssetsLiabilities"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:text="Assets &amp; Liabilities"
+                        android:textColor="@color/button_text"
+                        android:backgroundTint="@color/button_primary"
+                        app:cornerRadius="12dp"
+                        app:icon="@android:drawable/ic_menu_compass"
+                        app:iconGravity="textTop"
+                        app:iconSize="30dp"
+                        app:iconPadding="10dp"
+                        app:rippleColor="@color/button_ripple_gray"
+                        app:iconTint="@color/balance_green"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
-
     </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
